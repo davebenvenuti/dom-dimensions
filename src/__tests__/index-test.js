@@ -34,6 +34,13 @@ beforeAll(() => {
   const { document } = window;
   const div = document.getElementById("theDiv");
 
+  div.getBoundingClientRect = () => {
+    return {
+      height: 136,
+      width: 242
+    };
+  };
+
   domDimensions = new DOMDimensions(div, window);
 });
 

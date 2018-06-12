@@ -1,6 +1,6 @@
 {
   "name": "dom-dimensions",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A small library for determining basic dimensions of dom elements.",
   "main": "lib/dom-dimensions.js",
   "repository": "https://github.com/davebenvenuti/dom-dimensions",

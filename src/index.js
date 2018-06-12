@@ -21,6 +21,7 @@ export default class DOMDimensions {
   constructor(domElement, windowOverride = null) {
     this.domElement = domElement;
     this.style = style(domElement, windowOverride);
+    this.boundingClientRect = domElement.getBoundingClientRect();
   }
 
   margin() {
@@ -72,13 +73,13 @@ export default class DOMDimensions {
   }
 
   width(options={}) {
-    let width = parseFloat(this.style.width) || 0;
+    let width = this.boundingClientRect.width;
 
     for(const option of ["padding", "margin", "border"]) {
-      if(!!options[option]) {
+      if(!options[option]) {
         const value = this[option]();
 
-        width = width + value.left + value.right;
+        width = width - value.left - value.right;
       }
     }
 
@@ -86,13 +87,13 @@ export default class DOMDimensions {
   }
 
   height(options = {}) {
-    let height = parseFloat(this.style.height) || 0;
+    let height = this.boundingClientRect.height;
 
     for(const option of ["padding", "margin", "border"]) {
-      if(!!options[option]) {
+      if(!options[option]) {
         const value = this[option]();
 
-        height = height + value.top + value.bottom;
+        height = height - value.top - value.bottom;
       }
     }
 
