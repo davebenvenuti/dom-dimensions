@@ -1,9 +1,9 @@
 {
   "name": "dom-dimensions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small library for determining basic dimensions of dom elements.",
   "main": "lib/dom-dimensions.js",
-  "repository": "https://github.com/davebenvenuti/domdimensions",
+  "repository": "https://github.com/davebenvenuti/dom-dimensions",
   "author": "Dave Benvenuti <davebenvenuti@gmail.com>",
   "license": "MIT",
   "devDependencies": {
